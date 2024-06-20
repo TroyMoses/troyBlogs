@@ -6,6 +6,7 @@
     "dev": "next dev",
     "prebuild": "mkdir -p out",
     "build": "next build && npx prisma generate",
+    "postinstall": "prisma generate",
     "start": "next start",
     "lint": "next lint"
   },
