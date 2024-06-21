@@ -5,18 +5,9 @@ import CategoryList from "@/components/categoryList/CategoryList";
 import CardList from "@/components/cardList/CardList";
 import Menu from "@/components/Menu/Menu";
 
-export async function getServerSideProps(context) {
-  const { query } = context;
-  const page = parseInt(query.page) || 1;
+export default function Home({ searchParams }) {
+  const page = parseInt(searchParams.page) || 1;
 
-  return {
-    props: {
-      page,
-    },
-  };
-}
-
-export default function Home({ page }) {
   return (
     <div className={styles.container}>
       <Featured />
